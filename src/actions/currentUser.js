@@ -4,7 +4,13 @@ export const setCurrentUser = user => {
         type: "SET_CURRENT_USER",
         user
     }
-}
+};
+
+export const clearUserSession = () => {
+    return {
+        type: "LOGOUT_USER"
+    }
+};
 
 // async action creators
 export const login = ({ username, password }) => {
@@ -29,7 +35,7 @@ export const login = ({ username, password }) => {
                 }
             })
     }
-}
+};
 
 export const fetchCurrentUser = () => {
     return dispatch => {
@@ -45,5 +51,14 @@ export const fetchCurrentUser = () => {
                 }
             })
             .catch(error => console.log(error))
+    }
+};
+
+export const logout = () => {
+    return dispatch => {
+        return fetch("http://localhost:3001/api/v1/logout", {
+            credentials: "include",
+            method: "DELETE"
+        })
     }
 }

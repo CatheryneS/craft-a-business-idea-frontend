@@ -1,21 +1,28 @@
 import React from 'react';
-import LoginForm from './containers/LoginForm';
 import { connect } from 'react-redux';
+
 import { fetchCurrentUser } from './actions/currentUser';
+
+import LoginForm from './containers/LoginForm';
+import Logout from './components/Logout'
 
 class App extends React.Component {
   componentDidMount() {
-    fetchCurrentUser()
+    this.props.fetchCurrentUser()
   }
 
   render() {
     return (
       <div>
-        <LoginForm />
+        {this.props.currentUser ? <Logout /> : <LoginForm />}
       </div >
     )
   }
 
 }
 
-export default connect(null, fetchCurrentUser)(App);
+const mapStateToProps = ({ currentUser }) => {
+  return { currentUser }
+}
+
+export default connect(mapStateToProps, { fetchCurrentUser })(App);
