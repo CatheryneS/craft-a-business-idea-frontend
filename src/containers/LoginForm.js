@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
 import LoginInput from '../components/LoginInput';
+
 import { updateLoginForm } from '../actions/loginForm';
 import { login } from '../actions/currentUser';
 

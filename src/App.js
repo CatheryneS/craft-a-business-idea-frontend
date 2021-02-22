@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchCurrentUser } from './actions/currentUser';
 
-import LoginForm from './containers/LoginForm';
-import Logout from './components/Logout'
+import NavBar from './containers/NavBar';
 
 class App extends React.Component {
   componentDidMount() {
@@ -13,9 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.props.currentUser ? <Logout /> : <LoginForm />}
-      </div >
+      <NavBar />
     )
   }
 
