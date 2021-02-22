@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Login = ({ credentials, updateLoginForm }) => {
+const Login = ({ credentials, updateLoginForm, login }) => {
     const handleChange = (event) => {
         const { name, value } = event.target
         const updatedCredentials = {
@@ -10,8 +10,13 @@ const Login = ({ credentials, updateLoginForm }) => {
         updateLoginForm(updatedCredentials)
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        login(credentials)
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 name="username"

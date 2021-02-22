@@ -1,12 +1,21 @@
 import React from 'react';
 import LoginForm from './containers/LoginForm';
+import { connect } from 'react-redux';
+import { fetchCurrentUser } from './actions/currentUser';
 
-function App() {
-  return (
-    <div>
-      <LoginForm />
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    fetchCurrentUser()
+  }
+
+  render() {
+    return (
+      <div>
+        <LoginForm />
+      </div >
+    )
+  }
+
 }
 
-export default App;
+export default connect(null, fetchCurrentUser)(App);
