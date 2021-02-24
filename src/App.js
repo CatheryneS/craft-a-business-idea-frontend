@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchCurrentUser } from './actions/currentUser';
 
 import NavBar from './containers/NavBar';
+import SignUp from './containers/SignUp';
 
 class App extends React.Component {
   componentDidMount() {
@@ -12,7 +13,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <NavBar />
+      <div>
+        <NavBar />
+        <SignUp />
+      </div>
     )
   }
 

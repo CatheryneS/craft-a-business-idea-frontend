@@ -1,36 +1,38 @@
 import React from 'react';
 
-const Login = ({ credentials, updateLoginForm, login }) => {
+const SignUp = ({ credentials, updateSignUpForm, signUpUser }) => {
     const handleChange = (event) => {
         const { name, value } = event.target
         const updatedCredentials = {
             ...credentials,
             [name]: value
         }
-        updateLoginForm(updatedCredentials)
+        updateSignUpForm(updatedCredentials)
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        login(credentials);
-
-        const updatedCredentials = {
-            ...credentials,
-            username: "",
-            password: ""
-        }
-        updateLoginForm(updatedCredentials)
+        signUpUser(credentials)
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
+                name="name"
+                value={credentials.name}
+                onChange={handleChange}
+                placeholder="Your name"
+            />
+            <br />
+            <input
+                type="text"
                 name="username"
                 value={credentials.username}
                 onChange={handleChange}
-                placeholder="username"
+                placeholder="Username"
             />
+            <br />
             <input
                 type="password"
                 name="password"
@@ -38,9 +40,10 @@ const Login = ({ credentials, updateLoginForm, login }) => {
                 onChange={handleChange}
                 placeholder="password"
             />
-            <button type="submit">Login</button>
+            <br />
+            <button type="submit">Sign Up</button>
         </form>
     )
 }
 
-export default Login;
+export default SignUp;
