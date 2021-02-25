@@ -13,13 +13,6 @@ const Login = ({ credentials, updateLoginForm, login }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         login(credentials);
-
-        const updatedCredentials = {
-            ...credentials,
-            username: "",
-            password: ""
-        }
-        updateLoginForm(updatedCredentials)
     }
 
     return (

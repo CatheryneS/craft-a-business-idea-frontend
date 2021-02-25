@@ -5,6 +5,9 @@ import { fetchCurrentUser } from './actions/currentUser';
 
 import NavBar from './containers/NavBar';
 import SignUp from './containers/SignUp';
+import LoginForm from './containers/LoginForm';
+
+import { Route } from "react-router-dom";
 
 class App extends React.Component {
   componentDidMount() {
@@ -15,7 +18,8 @@ class App extends React.Component {
     return (
       <div>
         <NavBar />
-        <SignUp />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/login" component={LoginForm} />
       </div>
     )
   }

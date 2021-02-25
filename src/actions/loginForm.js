@@ -4,3 +4,7 @@ export const updateLoginForm = (credentials) => {
         credentials
     })
 }
+
+export const resetLoginForm = () => {
+    return ({ type: "UPDATE_LOGIN_FORM" })
+}

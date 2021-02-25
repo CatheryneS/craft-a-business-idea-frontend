@@ -12,7 +12,7 @@ const SignUp = ({ credentials, updateSignUpForm, signUpUser }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        signUpUser(credentials)
+        signUpUser(credentials);
     }
 
     return (
