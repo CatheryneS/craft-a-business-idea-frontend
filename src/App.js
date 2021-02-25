@@ -8,6 +8,7 @@ import SignUp from './containers/SignUp';
 import LoginForm from './containers/LoginForm';
 
 import { Route } from "react-router-dom";
+import Homepage from './containers/Homepage';
 
 class App extends React.Component {
   componentDidMount() {
@@ -20,6 +21,7 @@ class App extends React.Component {
         <NavBar />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={LoginForm} />
+        <Route exact path="/" render={(() => this.props.currentUser ? <LoginForm /> : < Homepage />)} />
       </div>
     )
   }
