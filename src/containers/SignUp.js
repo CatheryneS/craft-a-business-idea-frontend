@@ -13,6 +13,7 @@ export class SignUp extends Component {
                     updateSignUpForm={this.props.updateSignUpForm}
                     signUpUser={this.props.signUpUser}
                     resetSignUpForm={this.props.resetSignUpForm}
+                    history={this.props.history}
                 />
             </div>
         )

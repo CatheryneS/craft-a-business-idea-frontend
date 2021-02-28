@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SignUp = ({ credentials, updateSignUpForm, signUpUser }) => {
+const SignUp = ({ credentials, updateSignUpForm, signUpUser, history }) => {
     const handleChange = (event) => {
         const { name, value } = event.target
         const updatedCredentials = {
@@ -12,7 +12,7 @@ const SignUp = ({ credentials, updateSignUpForm, signUpUser }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        signUpUser(credentials);
+        signUpUser(credentials, history);
     }
 
     return (
