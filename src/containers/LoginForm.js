@@ -14,6 +14,7 @@ export class LoginForm extends Component {
                     credentials={this.props.credentials}
                     updateLoginForm={this.props.updateLoginForm}
                     login={this.props.login}
+                    history={this.props.history}
                 />
             </div>
         )

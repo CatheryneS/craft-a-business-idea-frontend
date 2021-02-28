@@ -15,7 +15,7 @@ export const clearUserSession = () => {
 };
 
 // async action creators
-export const login = ({ username, password }) => {
+export const login = ({ username, password }, history) => {
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/login", {
             credentials: "include",
@@ -35,6 +35,7 @@ export const login = ({ username, password }) => {
                 } else {
                     dispatch(setCurrentUser(resp))
                     dispatch(resetLoginForm())
+                    history.push("/")
                 }
             })
     }

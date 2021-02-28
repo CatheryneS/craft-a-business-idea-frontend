@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Login = ({ credentials, updateLoginForm, login }) => {
+const Login = ({ credentials, updateLoginForm, login, history }) => {
     const handleChange = (event) => {
         const { name, value } = event.target
         const updatedCredentials = {
@@ -12,7 +12,7 @@ const Login = ({ credentials, updateLoginForm, login }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        login(credentials);
+        login(credentials, history);
     }
 
     return (

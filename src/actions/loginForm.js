@@ -6,5 +6,5 @@ export const updateLoginForm = (credentials) => {
 }
 
 export const resetLoginForm = () => {
-    return ({ type: "UPDATE_LOGIN_FORM" })
+    return ({ type: "REST_LOGIN_FORM" })
 }
