@@ -5,14 +5,16 @@ import currentUser from './reducers/currentUser';
 import loginForm from './reducers/loginForm';
 import signUpForm from './reducers/signUp';
 import loveForm from './reducers/loveForm';
-import goodAtForm from './reducers/goodAtForm'
+import goodAtForm from './reducers/goodAtForm';
+import worldNeedForm from './reducers/worldNeedForm';
 
 const rootReducer = combineReducers({
     currentUser,
     loginForm,
     signUpForm,
     loveForm,
-    goodAtForm
+    goodAtForm,
+    worldNeedForm
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
