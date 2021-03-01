@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import GoodAtInput from '../components/GoodAtInput';
-import { updateGoodAtForm, submitGoodAtForm } from '../actions/goodAtForm';
+import { updateGoodAtForm } from '../actions/goodAtForm';
+import { addGoodAtsToWorksheet } from '../actions/worksheet';
 
 export class GoodAtForm extends Component {
     render() {
@@ -11,7 +12,7 @@ export class GoodAtForm extends Component {
                 <GoodAtInput
                     goodAtContent={this.props.goodAtContent}
                     updateGoodAtForm={this.props.updateGoodAtForm}
-                    submitGoodAtForm={this.props.submitGoodAtForm}
+                    addGoodAtsToWorksheet={this.props.addGoodAtsToWorksheet}
                     userId={this.props.userId}
                 />
             </div>
@@ -27,4 +28,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { updateGoodAtForm, submitGoodAtForm })(GoodAtForm)
+export default connect(mapStateToProps, { updateGoodAtForm, addGoodAtsToWorksheet })(GoodAtForm)

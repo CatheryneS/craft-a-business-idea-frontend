@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GoodAtInput = ({ goodAtContent, updateGoodAtForm, submitGoodAtForm, userId }) => {
+const GoodAtInput = ({ goodAtContent, updateGoodAtForm, addGoodAtsToWorksheet, userId }) => {
     const handleChange = (event) => {
         const { name, value } = event.target;
         const updatedGoodAts = {
@@ -14,7 +14,7 @@ const GoodAtInput = ({ goodAtContent, updateGoodAtForm, submitGoodAtForm, userId
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        submitGoodAtForm(goodAtContent, userId);
+        addGoodAtsToWorksheet(goodAtContent, userId);
     }
 
     return (

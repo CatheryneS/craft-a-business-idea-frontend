@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import LoveInput from '../components/LoveInput';
-import { updateLoveForm, submitLoveForm } from '../actions/loveForm';
+import { updateLoveForm } from '../actions/loveForm';
+import { addLovesToWorksheet } from '../actions/worksheet';
 
 export class LoveForm extends Component {
     render() {
@@ -11,7 +12,7 @@ export class LoveForm extends Component {
                 <LoveInput
                     loveContent={this.props.loveContent}
                     updateLoveForm={this.props.updateLoveForm}
-                    submitLoveForm={this.props.submitLoveForm}
+                    addLovesToWorksheet={this.props.addLovesToWorksheet}
                     userId={this.props.userId}
                 />
             </div>
@@ -27,4 +28,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { updateLoveForm, submitLoveForm })(LoveForm)
+export default connect(mapStateToProps, { updateLoveForm, addLovesToWorksheet })(LoveForm)

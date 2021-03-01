@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import WorldNeedInput from '../components/WorldNeedInput';
-import { updateWorldNeedForm, submitWorldNeedForm } from '../actions/worldNeedForm';
+import { updateWorldNeedForm } from '../actions/worldNeedForm';
+import { addWorldNeedsToWorksheet } from '../actions/worksheet';
 
 export class WorldNeedForm extends Component {
     render() {
@@ -11,7 +12,7 @@ export class WorldNeedForm extends Component {
                 <WorldNeedInput
                     worldNeedContent={this.props.worldNeedContent}
                     updateWorldNeedForm={this.props.updateWorldNeedForm}
-                    submitWorldNeedForm={this.props.submitWorldNeedForm}
+                    addWorldNeedsToWorksheet={this.props.addWorldNeedsToWorksheet}
                     userId={this.props.userId}
                 />
             </div>
@@ -27,4 +28,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { updateWorldNeedForm, submitWorldNeedForm })(WorldNeedForm)
+export default connect(mapStateToProps, { updateWorldNeedForm, addWorldNeedsToWorksheet })(WorldNeedForm)

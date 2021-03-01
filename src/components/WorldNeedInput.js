@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WorldNeedForm = ({ worldNeedContent, updateWorldNeedForm, submitWorldNeedForm, userId }) => {
+const WorldNeedForm = ({ worldNeedContent, updateWorldNeedForm, addWorldNeedsToWorksheet, userId }) => {
     const handleChange = (event) => {
         const { name, value } = event.target;
         const updatedWorldNeeds = {
@@ -14,7 +14,7 @@ const WorldNeedForm = ({ worldNeedContent, updateWorldNeedForm, submitWorldNeedF
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        submitWorldNeedForm(worldNeedContent, userId);
+        addWorldNeedsToWorksheet(worldNeedContent, userId);
     }
 
     return (

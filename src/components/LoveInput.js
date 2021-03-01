@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoveInput = ({ loveContent, updateLoveForm, submitWorksheet, userId }) => {
+const LoveInput = ({ loveContent, updateLoveForm, addLovesToWorksheet, userId }) => {
     const handleChange = (event) => {
         const { name, value } = event.target;
         const updatedLoves = {
@@ -14,7 +14,7 @@ const LoveInput = ({ loveContent, updateLoveForm, submitWorksheet, userId }) => 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        submitWorksheet(loveContent, userId);
+        addLovesToWorksheet(loveContent, userId);
     }
 
     return (
