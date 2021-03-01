@@ -11,10 +11,10 @@ export const addLove = (loveContent) => {
     })
 }
 export const resetLoveForm = () => {
-    return ({type: "UPDATE_LOVE_FORM"})
+    return ({ type: "UPDATE_LOVE_FORM" })
 }
 
-export const submitWorksheet = (worksheet, userId) => {
+export const submitLoveForm = (worksheet, userId) => {
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/worksheets", {
             credentials: "include",
@@ -22,11 +22,11 @@ export const submitWorksheet = (worksheet, userId) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({worksheet, userId})
+            body: JSON.stringify({ worksheet, userId })
         })
-        .then(resp => resp.json())
-        .then(resp => {
-            console.log(resp)
-        })
+            .then(resp => resp.json())
+            .then(resp => {
+                console.log(resp)
+            })
     }
 }

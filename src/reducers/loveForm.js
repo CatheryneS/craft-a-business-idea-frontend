@@ -3,16 +3,16 @@ const initialState = {
         firstLove: "",
         secondLove: "",
         thirdLove: "",
-        fourthLove:"",
+        fourthLove: "",
         fifthLove: "",
         sixthLove: "",
         seventhLove: "",
         eightLove: "",
-        ninethLove:"",
+        ninethLove: "",
         tenthLove: ""
     }
 }
-const worksheet = (state = initialState, action) => {
+const loveForm = (state = initialState, action) => {
     switch (action.type) {
         case "UPDATE_LOVE_FORM":
             return action.loveContent
@@ -25,4 +25,4 @@ const worksheet = (state = initialState, action) => {
     }
 }
 
-export default worksheet;
+export default loveForm;

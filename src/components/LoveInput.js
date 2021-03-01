@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoveInput = ({ loveContent, updateLoveForm, submitWorksheet, userId}) => {
+const LoveInput = ({ loveContent, updateLoveForm, submitWorksheet, userId }) => {
     const handleChange = (event) => {
         const { name, value } = event.target;
         const updatedLoves = {
@@ -26,7 +26,7 @@ const LoveInput = ({ loveContent, updateLoveForm, submitWorksheet, userId}) => {
                     name="firstLove"
                     value={loveContent.firstLove}
                     onChange={handleChange}
-                   
+
                 /><br />
                 <input
                     type="text"
