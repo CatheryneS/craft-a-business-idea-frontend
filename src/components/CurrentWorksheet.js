@@ -11,17 +11,17 @@ export class CurrentWorksheet extends Component {
 
     loadLoves = () => {
         const { worksheet } = this.props;
-        return worksheet.loves.map(love => < LoveEntry content={love} />)
+        return worksheet.loves.map((love, i) => < LoveEntry key={i} content={love} />)
     }
 
     loadGoodAt = () => {
         const { worksheet } = this.props;
-        return worksheet.goodAts.map(g => < GoodAtEntry content={g} />)
+        return worksheet.goodAts.map((g, i) => < GoodAtEntry key={i} content={g} />)
     }
 
     loadWorldNeed = () => {
         const { worksheet } = this.props;
-        return worksheet.worldNeeds.map(wn => < WorldNeedEntry content={wn} />)
+        return worksheet.worldNeeds.map((wn, i) => < WorldNeedEntry key={i} content={wn} />)
     }
 
     render() {
@@ -40,7 +40,13 @@ export class CurrentWorksheet extends Component {
                 <ul>
                     {this.loadWorldNeed()}
                 </ul>
-                <button type="click"><Link to="/generator">Generate Ideas</Link></button>
+                <Link to={{
+                    pathname: "/generator",
+                    state: {
+                        currentWorksheet: this.props.worksheet
+                    }
+                }}>Generate Ideas</Link>
+
             </div>
         )
     }
