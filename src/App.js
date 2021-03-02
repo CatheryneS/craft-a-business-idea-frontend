@@ -13,6 +13,7 @@ import CurrentWorksheet from './components/CurrentWorksheet'
 import Generator from './containers/Generator';
 import Homepage from './containers/Homepage';
 import Logout from './components/Logout';
+import MyWorksheets from './containers/MyWorksheets';
 
 class App extends React.Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Route exact path="/worksheets/new" component={Worksheet} />
           <Route exact path="/worksheets/:id" render={props => <CurrentWorksheet id={props.match.params.id} />} />
           <Route exact path="/generator" render={props => <Generator id={props.match.params.id} />} />
+          <Route exact path="/worksheets" component={MyWorksheets} />
           <Route exact path="/" render={(() => this.props.currentUser ? <StartingPage /> : < Homepage />)} />
         </Switch>
       </div>

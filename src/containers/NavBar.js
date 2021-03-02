@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import Logout from '../components/Logout';
 
 const NavBar = ({ currentUser }) => {
     return (
         <div>
-            <Link to={"/"}>Home</Link> | <Logout />
+            <NavLink exact activeClassName="active" to="/"  >Home</NavLink> | <NavLink exact activeClassName="active" to="/worksheets"> My Worksheets</NavLink> | <Logout />
         </div>
     )
 }
