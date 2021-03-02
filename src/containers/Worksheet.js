@@ -9,7 +9,7 @@ import { submitWorksheet } from '../actions/worksheet'
 export class Worksheet extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.submitWorksheet(this.props.worksheet, this.props.userId)
+        this.props.submitWorksheet(this.props.worksheet, this.props.userId, this.props.history)
     };
     render() {
         return (

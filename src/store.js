@@ -7,7 +7,8 @@ import signUpForm from './reducers/signUp';
 import loveForm from './reducers/loveForm';
 import goodAtForm from './reducers/goodAtForm';
 import worldNeedForm from './reducers/worldNeedForm';
-import worksheet from './reducers/worksheet'
+import worksheet from './reducers/worksheet';
+import currentWorksheet from './reducers/worksheets';
 
 const rootReducer = combineReducers({
     currentUser,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
     loveForm,
     goodAtForm,
     worldNeedForm,
-    worksheet
+    worksheet,
+    currentWorksheet
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

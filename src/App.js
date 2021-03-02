@@ -8,6 +8,7 @@ import SignUp from './containers/SignUp';
 import LoginForm from './containers/LoginForm';
 import StartingPage from './components/StartingPage';
 import Worksheet from './containers/Worksheet';
+import CurrentWorksheet from './components/CurrentWorksheet'
 
 import { Route } from "react-router-dom";
 import Homepage from './containers/Homepage';
@@ -23,7 +24,8 @@ class App extends React.Component {
         <NavBar />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={LoginForm} />
-        <Route exact path="/worksheet" component={Worksheet} />
+        <Route exact path="/worksheets/new" component={Worksheet} />
+        <Route exact path="/worksheets/:id" render={props => <CurrentWorksheet id={props.match.params.id} />} />
         <Route exact path="/" render={(() => this.props.currentUser ? <StartingPage /> : < Homepage />)} />
       </div>
     )
@@ -31,8 +33,11 @@ class App extends React.Component {
 
 }
 
-const mapStateToProps = ({ currentUser }) => {
-  return { currentUser }
+const mapStateToProps = (state) => {
+  return ({
+    currentUser: state.currentUser,
+    worksheet: state.worksheets
+  })
 }
 
 export default connect(mapStateToProps, { fetchCurrentUser })(App);
