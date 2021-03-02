@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const StartingPage = () => {
     return (
         <div>
-            <Link to="/worksheet">Start</Link>
+            <Link to="/worksheets/new">Start</Link>
             <h2>Instructions</h2>
             <p>Welcome, you'll be coming up with ideas for three categories.</p>
             <p>Once you have come up with ideas for each, we'll randomly pick one idea from each category,</p>

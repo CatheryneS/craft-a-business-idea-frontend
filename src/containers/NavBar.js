@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import Logout from '../components/Logout';
 
 const NavBar = ({ currentUser }) => {
     return (
         <div>
-            {currentUser ? <Logout /> : null}
+            <Link to={"/"}>Home</Link> | <Logout />
         </div>
     )
 }
