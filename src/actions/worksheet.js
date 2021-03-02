@@ -22,6 +22,12 @@ export const addWorldNeedsToWorksheet = (worldNeedContent) => {
     })
 }
 export const submitWorksheet = (worksheet, userId) => {
+    // debugger
+    const sections = {
+        loves: Object.values(worksheet.loves[0]),
+        goodAts: Object.values(worksheet.goodAts[0]),
+        worldNeeds: Object.values(worksheet.worldNeeds[0])
+    }
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/worksheets", {
             credentials: "include",
@@ -29,7 +35,7 @@ export const submitWorksheet = (worksheet, userId) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ worksheet, userId })
+            body: JSON.stringify({ sections, userId })
         })
             .then(resp => resp.json())
             .then(resp => {
