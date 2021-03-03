@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 import { fetchWorksheet } from '../actions/worksheet';
 import { LoveEntry, GoodAtEntry, WorldNeedEntry } from './Entry';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
+import CardDeck from 'react-bootstrap/CardDeck'
+import Button from 'react-bootstrap/Button'
 
 export class CurrentWorksheet extends Component {
     componentDidMount() {
@@ -26,26 +30,38 @@ export class CurrentWorksheet extends Component {
 
     render() {
         return (
-            <div>
+            <div className="completed">
                 <h1>Completed Worksheet</h1>
-                <h3>Love</h3>
-                <ul>
-                    {this.loadLoves()}
-                </ul>
-                <h3>Good At</h3>
-                <ul>
-                    {this.loadGoodAt()}
-                </ul>
-                <h3>World Need</h3>
-                <ul>
-                    {this.loadWorldNeed()}
-                </ul>
-                <Link to={{
+                <CardDeck>
+                    <Card bg="danger" style={{ width: '18rem' }}>
+                        <Card.Header style={{ color: 'white' }}><h2 style={{ textAlign: 'center', paddingTop: '20px', fontSize: '50px' }}>Love</h2></Card.Header>
+                        <ListGroup variant="flush">
+                            {this.loadLoves()}
+                        </ListGroup>
+                    </Card>
+                    <Card bg="success" style={{ width: '18rem' }}>
+                        <Card.Header style={{ color: 'white' }}><h2 style={{ textAlign: 'center', paddingTop: '20px', fontSize: '50px' }}>Good At</h2></Card.Header>
+                        <ListGroup variant="flush">
+                            {this.loadGoodAt()}
+                        </ListGroup>
+                    </Card>
+                    <Card bg="info" style={{ width: '18rem' }}>
+                        <Card.Header style={{ color: 'white' }}><h2 style={{ textAlign: 'center', paddingTop: '20px', fontSize: '50px' }}>World Need</h2></Card.Header>
+                        <ListGroup variant="flush">
+                            {this.loadWorldNeed()}
+                        </ListGroup>
+                    </Card>
+                </CardDeck>
+                <br />
+                <Button block size="lg" variant="light" className="ideas-button"><Link style={{ color: "black" }} to={{
                     pathname: "/generator",
                     state: {
                         currentWorksheet: this.props.worksheet
                     }
-                }}>Generate Ideas</Link>
+                }}><h1 style={{ fontSize: '50px', paddingTop: '10px' }}>Generate Ideas</h1></Link></Button>
+
+                <br />
+                <br />
 
             </div>
         )

@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 const MyWorksheets = ({ myWorksheets }) => {
-    const worksheetList = myWorksheets.length > 0 ? myWorksheets.map((w, i) => (<p key={w.id}><Link to={`/worksheets/${w.id}`}>Worksheet {i + 1}</Link></p>)) : "You have no worksheets"
+    const worksheetList = myWorksheets.length > 0 ?
+        myWorksheets.map((w, i) =>
+            (<ListGroup.Item key={w.id} ><Link style={{ fontSize: '40px' }} to={`/worksheets/${w.id}`}>Worksheet {i + 1}</Link></ListGroup.Item>)
+        ) : "You have no worksheets"
 
     return worksheetList
 }

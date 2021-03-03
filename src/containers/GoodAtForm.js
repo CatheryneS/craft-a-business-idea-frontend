@@ -8,7 +8,14 @@ export class GoodAtForm extends Component {
     render() {
         return (
             <div className="GoodAtForm">
-                <h1>GoodAtContent</h1>
+                <h1>Good At</h1>
+                <ul>
+                    <li>What are you paid to do?</li>
+                    <li>What do you excel at naturally?</li>
+                    <li>What did/will you study in school or been trained to do?</li>
+                    <li>What do others often say you do easily? (Ask a friend if you need to.)</li>
+                </ul>
+
                 <GoodAtInput
                     goodAtContent={this.props.goodAtContent}
                     updateGoodAtForm={this.props.updateGoodAtForm}

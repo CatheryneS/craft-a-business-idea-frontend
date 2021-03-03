@@ -1,0 +1,30 @@
+div.Homepage {
+    height: 400px;
+    width: 800px;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20%;
+    margin-left: 400px;
+    font-family: 'Bebas Neue', cursive;
+  }
+
+div h1{
+    font-size: 100px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+div.sign-up .form-group {
+    width: px;
+    height: auto;
+    padding-top: 0%;
+    text-align: left;
+    font-size: 35px;
+}
+div form {
+    padding-top: -20px;
+}
+div .form-group button {
+    text-align: center;
+    font-size: 30px;
+}

@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from '../actions/currentUser';
+import Form from 'react-bootstrap/Form'
 
 const Logout = ({ logout }) => {
     return (
-        <form onSubmit={logout}>
-            <input type="submit" value="Log Out" />
-        </form>
+        <Form onSubmit={logout}>
+            <Form.Control type="submit" value="Log Out" />
+        </Form>
     )
 }
 

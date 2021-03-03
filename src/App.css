@@ -1,0 +1,45 @@
+body {
+    background-color: #282c34;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+
+div.start {
+    padding: 40px;
+    font-size: 20px;
+} 
+div.start a {
+    color: red;
+}
+
+div.worksheet-form {
+    padding: 40px;
+}
+
+div.worksheet-form ul li {
+font-size: 20px;
+}
+
+div.completed {
+    padding: 40px;
+}
+
+div.generator {
+    padding: 40px;
+} 
+
+div.generator p {
+    font-size: 30px;
+}
+
+form.sign-up {
+    padding-top: 15%;
+    margin-left: 35%;
+    width: 400px;
+}
+
+form.login {
+    padding-top: 15%;
+    margin-left: 35%;
+    width: 400px;
+}

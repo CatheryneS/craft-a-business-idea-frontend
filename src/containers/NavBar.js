@@ -10,6 +10,7 @@ const NavBar = () => {
             <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/worksheets">My Worksheets</Nav.Link>
+                <Nav.Link href="https://www.youtube.com/watch?v=BAzs3amtEFA" target="_blank">futur Video</Nav.Link>
             </Nav>
             <Logout />
         </Navbar>

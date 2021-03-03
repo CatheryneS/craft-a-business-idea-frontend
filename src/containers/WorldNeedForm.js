@@ -9,13 +9,19 @@ export class WorldNeedForm extends Component {
         return (
             <div className="WorldNeedForm">
                 <h1>World Needs</h1>
+                <ul>
+                    <li>Think big(the world)</li>
+                    <li>Think small(neighborhoods)</li>
+                    <li>What opportunity to serve others?</li>
+                    <li>What's trending right now?</li>
+                </ul>
                 <WorldNeedInput
                     worldNeedContent={this.props.worldNeedContent}
                     updateWorldNeedForm={this.props.updateWorldNeedForm}
                     addWorldNeedsToWorksheet={this.props.addWorldNeedsToWorksheet}
                     userId={this.props.userId}
                 />
-            </div>
+            </div >
         )
     }
 }

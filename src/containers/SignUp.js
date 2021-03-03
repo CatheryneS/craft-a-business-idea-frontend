@@ -7,7 +7,7 @@ import { updateSignUpForm, signUpUser, resetSignUpForm } from '../actions/signup
 export class SignUp extends Component {
     render() {
         return (
-            <div>
+            <>
                 <SignUpInput
                     credentials={this.props.credentials}
                     updateSignUpForm={this.props.updateSignUpForm}
@@ -15,7 +15,7 @@ export class SignUp extends Component {
                     resetSignUpForm={this.props.resetSignUpForm}
                     history={this.props.history}
                 />
-            </div>
+            </>
         )
     }
 }

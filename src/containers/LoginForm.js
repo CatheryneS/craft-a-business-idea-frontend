@@ -9,14 +9,14 @@ import { login } from '../actions/currentUser';
 export class LoginForm extends Component {
     render() {
         return (
-            <div>
+            <>
                 <LoginInput
                     credentials={this.props.credentials}
                     updateLoginForm={this.props.updateLoginForm}
                     login={this.props.login}
                     history={this.props.history}
                 />
-            </div>
+            </>
         )
     }
 }

@@ -4,6 +4,7 @@ import GoodAtForm from './GoodAtForm';
 import LoveForm from './LoveForm';
 import WorldNeedForm from './WorldNeedForm';
 import { submitWorksheet } from '../actions/worksheet'
+import Button from 'react-bootstrap/Button'
 
 
 export class Worksheet extends React.Component {
@@ -18,7 +19,7 @@ export class Worksheet extends React.Component {
                 <LoveForm />
                 <GoodAtForm />
                 <WorldNeedForm />
-                <button type="submit" onClick={this.handleSubmit}>Submit Worksheet</button>
+                <Button block size="lg" variant="light" type="submit" onClick={this.handleSubmit}>Submit Worksheet</Button>
             </div>
         )
     }

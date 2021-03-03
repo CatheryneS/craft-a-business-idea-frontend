@@ -1,9 +1,10 @@
 import React from 'react'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 export const LoveEntry = ({ content }) => {
     return (
         <>
-            <li>{content}</li>
+            <ListGroup.Item style={{ color: 'black' }}><p style={{ fontSize: '25px' }}>{content}</p></ListGroup.Item>
         </>
     )
 }
@@ -11,7 +12,7 @@ export const LoveEntry = ({ content }) => {
 export const GoodAtEntry = ({ content }) => {
     return (
         <>
-            <li>{content}</li>
+            <ListGroup.Item style={{ color: 'black' }}><p style={{ fontSize: '25px' }}>{content}</p></ListGroup.Item>
         </>
     )
 }
@@ -19,7 +20,7 @@ export const GoodAtEntry = ({ content }) => {
 export const WorldNeedEntry = ({ content }) => {
     return (
         <>
-            <li>{content}</li>
+            <ListGroup.Item style={{ color: 'black' }}><p style={{ fontSize: '25px' }}>{content}</p></ListGroup.Item>
         </>
     )
 }

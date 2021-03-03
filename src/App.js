@@ -14,6 +14,7 @@ import Generator from './containers/Generator';
 import Homepage from './containers/Homepage';
 import Logout from './components/Logout';
 import MyWorksheets from './containers/MyWorksheets';
+import './App.css';
 
 class App extends React.Component {
   componentDidMount() {
@@ -22,9 +23,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.props.currentUser ? <NavBar location={this.props.location} /> : null}
-        <Switch>
+      <div className="App">
+        { this.props.currentUser ? <NavBar location={this.props.location} /> : null}
+        < Switch >
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/login" component={LoginForm} />
           <Route exact path="/logout" component={Logout} />
@@ -33,7 +34,7 @@ class App extends React.Component {
           <Route exact path="/generator" render={props => <Generator id={props.match.params.id} />} />
           <Route exact path="/worksheets" component={MyWorksheets} />
           <Route exact path="/" render={(() => this.props.currentUser ? <StartingPage /> : < Homepage />)} />
-        </Switch>
+        </ Switch>
       </div>
     )
   }
